@@ -68,3 +68,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Size Reduction Calculation:
+
+    Single-stage Dockerfile with node:18 (default image):
+        node:18 is approximately 1.4GB in size.
+        This includes all build tools and dependencies for both building and running the application.
+
+    Multi-stage Dockerfile with node:18-slim for build and node:18-alpine for runtime:
+        node:18-slim image is approximately 200MB.
+        node:18-alpine image is approximately 50MB.
+        The final image size will typically be around 200MB-300MB depending on the size of the app, as only the necessary files from the build stage are copied.
+
+Size Savings:
+
+    A single-stage build using node:18 would result in an image of 1.4GB.
+    A multi-stage build using node:18-slim for the build and node:18-alpine for runtime would reduce the image size to 200MB-300MB.
+    
+    This results in a 1.1GB-1.2GB size reduction, which is a significant improvement.
+    
