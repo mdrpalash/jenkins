@@ -7,10 +7,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Welcome to My React Demo!</h1>
-        <p>This is a simple React application.</p>
+        <p>This is a simple React application made by MD. Rashaduzzaman Thank you.</p>
         <button
           className="App-button"
-          onClick={() => alert('Hello, world!')}
+          onClick={() => alert('Hello, DEVOPS BATCH-2 , Thank you')}
         >
           Click me
         </button>
